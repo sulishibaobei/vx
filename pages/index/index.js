@@ -21,10 +21,10 @@ Page({
       success: (res) => {
         var latitude = res.latitude // 纬度
         var longitude = res.longitude // 经度
-        this.setData={
+        this.setData({
           jd:latitude,
           wd:longitude
-        }
+        })
       }
     })
   },
