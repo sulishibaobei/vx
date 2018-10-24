@@ -1,0 +1,13 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light", 
+    "navigationBarBackgroundColor": "#3188e8",
+    "navigationBarTitleText": "我想和你聊天",
+    "navigationBarTextStyle":"black",
+    "backgroundColor":"#e03236"
+  }
+}
