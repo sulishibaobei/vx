@@ -16,16 +16,27 @@ Page({
     })
   },
   locationViewTap:function(){
-    wx.getLocation({
-      type: 'wgs84',
+    wx.navigateTo({
+      url: '../map/map'
+    })
+  },
+  scanCode:function(){
+    wx.scanCode({
       success: (res) => {
-        var latitude = res.latitude // 纬度
-        var longitude = res.longitude // 经度
-        this.setData({
-          jd:latitude,
-          wd:longitude
+        
+        wx.showToast({
+          title: '成功',
+          icon: 'success',
+          duration: 2000
         })
-      }
+      },
+      fail: (res) => {
+        wx.showToast({
+          title: '失败',
+          icon: 'success',
+          duration: 2000
+        })
+      },
     })
   },
   onLoad: function () {
@@ -57,7 +68,6 @@ Page({
     }
   },
   getUserInfo: function(e) {
-    console.log(e)
     app.globalData.userInfo = e.detail.userInfo
     this.setData({
       userInfo: e.detail.userInfo,

@@ -22,6 +22,8 @@
 .usermap{
   margin-top: 20px;
 }
-.userlocation{
+.usermap button{
   margin-bottom: 10px;
+  float: left;
+  margin-right: 10px;
 }
