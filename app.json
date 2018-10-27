@@ -11,6 +11,19 @@
     "navigationBarTextStyle":"black",
     "backgroundColor":"#e03236"
   },
+  "tabBar":{
+    "list":[
+      {
+        "pagePath":"pages/main/main",
+        "text": "主页"
+            
+      },
+      {
+          "pagePath": "pages/map/map",
+           "text": "主页"
+      }
+    ]
+  },
  "networkTimeout": {
   "request": 10000,
   "downloadFile": 10000
