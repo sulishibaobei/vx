@@ -1,32 +1,40 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/map/map"
+    "pages/map/map",
+    "pages/main/main"
   ],
-  "window":{
-    "backgroundTextStyle":"light", 
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3188e8",
     "navigationBarTitleText": "我想和你聊天",
-    "navigationBarTextStyle":"black",
-    "backgroundColor":"#e03236"
+    "navigationBarTextStyle": "black",
+    "backgroundColor": "#e03236"
   },
-  "tabBar":{
-    "list":[
+  "tabBar": {
+    "color": "#353535",
+    "selectedColor": "#3cc51f",
+    "borderStyle": "white",
+    "backgroundColor": "#ffffff",
+    "list": [
       {
-        "pagePath":"pages/main/main",
+        "pagePath": "pages/main/main",
+        "iconPath": "images/icon_API.png",
+        "selectedIconPath": "images/icon_API_HL.png",
         "text": "主页"
-            
       },
       {
-          "pagePath": "pages/map/map",
-           "text": "主页"
+        "pagePath": "pages/map/map",
+        "iconPath": "images/icon_component.png",
+        "selectedIconPath": "images/icon_component_HL.png",
+        "text": "主页"
       }
     ]
   },
- "networkTimeout": {
-  "request": 10000,
-  "downloadFile": 10000
- },
- "debug": true
+  "networkTimeout": {
+    "request": 10000,
+    "downloadFile": 10000
+  },
+  "debug": true
 }
