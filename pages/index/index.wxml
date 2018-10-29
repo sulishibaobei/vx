@@ -4,7 +4,7 @@
   autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" class="banner">
   <block  wx:for="{{banner}}">
    <swiper-item>
-        <image src="{{item.image}}" class="slide-image"/>
+        <image src="{{item.image}}" class="slide-image" bindtap="bindViewTap"  data-id="{{item.id}}"/>
         <text class="banner-title">{{item.title}}</text>
     </swiper-item>
   </block>

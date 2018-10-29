@@ -43,6 +43,11 @@ Page({
     now.setDate(now.getDate() - this.index++);
     return now
   },
+  bindViewTap:function(e){
+    wx.navigateTo({
+      url: '../detail/detail?id=' + e.target.dataset.id
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
