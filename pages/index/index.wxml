@@ -25,6 +25,6 @@
       </view>
      </navigator>
   </block>
-  <button type='button' class="more-btn" catchtap="loadMore" hover-class="none" loading='{{loading}}' plain="{{plain}}" list="list">更多</button>
+  <button type="button" class="more-btn"  loading="{{loading}}" plain="{{plain}}" bindtap="loadMore">更多</button>
 </view>
 </view>

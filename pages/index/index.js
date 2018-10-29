@@ -1,5 +1,5 @@
 
-const util = require('../../utils/util.js');
+var util = require('../../utils/util.js');
 var app = getApp();
 Page({
   /**
@@ -18,13 +18,12 @@ Page({
   },
 
   loadMore: function (e) {
-    console.log(e.currentTarget.dataset)
-    if (this.data.lenght == 0) return;
-    var date = this.getNextDate();
-    var that = this;
-    that.setData({ loading: true });
+    if (this.data.list.length === 0) return
+    var date = this.getNextDate()
+    var that = this
+    that.setData({ loading: true })
     wx.request({
-      url: 'https://news.at.zhihu.com/api/4/news/before/' + (Number(util.formatDate(date)) + 1),
+      url: 'https://news-at.zhihu.com/api/4/news/before/' + (Number(util.formatDate(date)) + 1),
       headers: {
         'Content-Type': 'application/json'
       },
@@ -33,11 +32,14 @@ Page({
           loading: false,
           list: that.data.list.concat([{ header: util.formatDate(date, '-') }]).concat(res.data.stories)
         })
+      },
+      error(res){
+        console.log(res);
       }
     })
   },
   getNextDate: function () {
-    const now = new Date()
+    var now = new Date()
     now.setDate(now.getDate() - this.index++);
     return now
   },
@@ -60,7 +62,6 @@ Page({
       }
     })
     this.index = 1;
-  
   },
 
 

@@ -8,8 +8,6 @@ Page({
   data: {
     art:{},
   },
-
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -23,7 +21,6 @@ Page({
       success(res) {
         if (res.data.body) {
           var body = res.data.body;
-         
           /**
            * 获取正文部分 p标签包裹的部分
            */
