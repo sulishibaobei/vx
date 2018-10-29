@@ -1,29 +1,82 @@
-/**index.wxss**/
-.userinfo {
+
+ .content{
+   background: #f2f2f2;
+   height: 100vh;
+ }
+.banner{
+  width:100%;
+  height: 400rpx;
+  position: relative;
+}
+.slide-image{
+  width:100%;
+  height: 100%;
+}
+.banner-title{
+   position: absolute;
+   bottom:60rpx;
+   left:20rpx;
+   right:20rpx;
+   padding: 10rpx;
+   color:#ffffff;
+   font-size:40rpx;
+   overflow: hidden;
+   text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+  background: -webkit-linear-gradient(rgba(255,255,255,0.2), rgba(0,0,0,.1)); 
+}
+.header-title{
+  padding: 20rpx;
+  font-size: 28rpx;
+}
+.news-item-container{
+  background: #efefef;
+  
+}
+.news-list{
+  height: 150rpx;
+  background: #ffffff;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  margin:0 20rpx 20rpx;
+  position: relative; 
+  padding: 16rpx; 
+  zoom:1;
+  border:1px solid #e7e7e7;
+  border-radius: 4px;
+  box-shadow: 0px 0px 5px 4px rgba(241,241,241,0.5);
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
-}
-
-.userinfo-nickname {
-  color: #aaa;
-}
-
-.usermotto {
-  margin-top: 100px;
-}
-.usermap{
-  margin-top: 20px;
-}
-.usermap button{
-  margin-bottom: 10px;
+ 
+.news-list-left{
+  width: 70%;
   float: left;
-  margin-right: 10px;
+  padding-left:10rpx;
+}
+.news-list-title{
+  font-size: 32rpx;
+  color:#000000;
+  overflow: hidden;
+   text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2;
+}
+.news-list-time{
+  font-size:24rpx;
+  color:#666;
+}
+.news-list-right{
+  float: right;
+  width:30%;
+  height: 100%;
+}
+.news-list-right .news-image{
+  width: 100%;
+  height: 100%;
+}
+.more-btn{
+  background: #3188e8;
+  color:#ffffff;
+  margin:0 20rpx;
 }

@@ -1,0 +1,16 @@
+<!--pages/detail/page.wxml-->
+<view class="container">
+ <block wx:if="{{art}}">
+   <view class="detail-items">
+     <image src="{{art.image}}" class="detail-img"></image>
+     <view class="detail-title">
+       <text>{{art.title}}</text>
+        <text class="detail-atricle">{{art.image_source}}</text>
+     </view>
+    </view>
+    <view class="detail-content">
+      {{art.body}}
+    </view>
+  </block>
+  <image src="../../images/goback.png"  class='goTop' hidden='{{!floorstatus}}' bindtap="goTop"></image>
+</view>
