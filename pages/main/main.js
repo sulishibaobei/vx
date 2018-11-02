@@ -22,25 +22,7 @@ Page({
       url: '../map/map'
     })
   },
-  scanCode: function () {
-    wx.scanCode({
-      success: (res) => {
-
-        wx.showToast({
-          title: '成功',
-          icon: 'success',
-          duration: 2000
-        })
-      },
-      fail: (res) => {
-        wx.showToast({
-          title: '失败',
-          icon: 'success',
-          duration: 2000
-        })
-      },
-    })
-  },
+ 
   onLoad: function () {
     if (app.globalData.userInfo) {
       this.setData({

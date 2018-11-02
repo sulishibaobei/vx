@@ -23,7 +23,7 @@ Page({
     var that = this
     that.setData({ loading: true })
     wx.request({
-      url: 'https://news-at.zhihu.com/api/4/news/before/' + (Number(util.formatDate(date)) + 1),
+      url: 'https://news-at.zhihu.com/api/4/news/before/' + (Number(util.formatDate(date))),
       headers: {
         'Content-Type': 'application/json'
       },

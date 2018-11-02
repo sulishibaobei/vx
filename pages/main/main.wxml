@@ -12,6 +12,5 @@
   </view>
   <view class="usermap">
     <button bindtap="locationViewTap" class="userlocation">获取用户地址</button>
-    <button bindtap="scanCode">扫一扫</button>
   </view>
   </view>
