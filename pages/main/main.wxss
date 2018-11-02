@@ -19,6 +19,11 @@
 
 .usermotto {
   margin-top: 100px;
+  text-align: center;
+}
+.user-motto{
+  display: block;
+  color:#555555;
 }
 .usermap{
   margin-top: 20px;

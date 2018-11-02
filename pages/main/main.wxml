@@ -9,6 +9,7 @@
   </view>
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+    <text class="user-motto">{{greet}}</text>
   </view>
   <view class="usermap">
     <button bindtap="locationViewTap" class="userlocation">获取用户地址</button>
