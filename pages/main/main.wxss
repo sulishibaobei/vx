@@ -16,20 +16,19 @@
 .userinfo-nickname {
   color: #aaa;
 }
-
-.usermotto {
-  margin-top: 100px;
-  text-align: center;
+.programList{
+  margin: 20rpx;
+  text-align: left;
+  border-top:1px solid #ddd;
+  width: 630rpx;
 }
-.user-motto{
-  display: block;
-  color:#555555;
+.programList .title{
+  font-size: 24rpx;
+  color:#3188e8;
 }
-.usermap{
-  margin-top: 20px;
-}
-.usermap button{
-  margin-bottom: 10px;
+.programBtn{
+  width:200rpx;
   float: left;
-  margin-right: 10px;
+  margin-top: 20rpx;
 }
+ 

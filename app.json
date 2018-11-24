@@ -3,10 +3,18 @@
     "pages/index/index",
     "pages/main/main",
     "pages/detail/detail",
-    "pages/logs/logs",
     "pages/map/map"
-   
   ],
+    "subPackages": [
+      {
+        "root": "douban",
+        "name": "DouBan",
+        "pages": [
+          "splash/splash"
+        ],
+        "independent": false
+      }
+    ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#3188e8",
@@ -20,12 +28,12 @@
     "borderStyle": "white",
     "backgroundColor": "#ffffff",
     "list": [
-        {
-          "pagePath": "pages/index/index",
-          "iconPath": "images/icon_component.png",
-          "selectedIconPath": "images/icon_component_HL.png",
-          "text": "知乎日报"
-        },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "images/icon_component.png",
+        "selectedIconPath": "images/icon_component_HL.png",
+        "text": "知乎日报"
+      },
       {
         "pagePath": "pages/main/main",
         "iconPath": "images/icon_API.png",

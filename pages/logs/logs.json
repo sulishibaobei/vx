@@ -1,7 +1,0 @@
-{
-  "navigationBarTitleText": "查看日志记录",
-  "navigationBarBackgroundColor":"#fff",
-  "backgroundColor":"#dddddd",
-  "enablePullDownRefresh":true,
-  "backgroundTextStyle":"dark"
-}
