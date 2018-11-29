@@ -1,2 +1,93 @@
-<!--douban/board/board.wxml-->
-<text>douban/board/board.wxml</text>
+ <!--初始列表页面-->
+<view class="container-box">
+  <swiper indicator-dots="true">
+  <block wx:for="{{mainMovieUrls}}">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image"/>
+    </swiper-item>
+  </block>
+</swiper>
+<view class="soon-box">
+    <view class="flex nav">
+        <view class="flex-auto nav-title">正在上映的电影--<text>深圳</text></view>
+        <view class="nav-arrow">》</view>
+    </view>
+    <scroll-view class="scroll-view_x" scroll-x>
+        <view class="inner">
+            <block wx:for="{{mainMovieUrls}}">
+                <view class="movies-box">
+                    <image src="{{item}}" class="scroll-image"/>
+                    <text class="movie-title">森林系》森女系森林系》森女系</text>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+
+<view class="soon-box">
+    <view class="flex nav">
+        <view class="flex-auto nav-title">即将上映的电影</view>
+        <view class="nav-arrow">》</view>
+    </view>
+    <scroll-view class="scroll-view_x" scroll-x>
+        <view class="inner">
+            <block wx:for="{{mainMovieUrls}}">
+                <view class="movies-box">
+                    <image src="{{item}}" class="scroll-image"/>
+                    <text class="movie-title">森林系》森女系森林系》森女系</text>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+
+
+<view class="soon-box">
+    <view class="flex nav">
+        <view class="flex-auto nav-title">豆瓣电影新片版</view>
+        <view class="nav-arrow">》</view>
+    </view>
+    <scroll-view class="scroll-view_x" scroll-x>
+        <view class="inner">
+            <block wx:for="{{mainMovieUrls}}">
+                <view class="movies-box">
+                    <image src="{{item}}" class="scroll-image"/>
+                    <text class="movie-title">森林系》森女系森林系》森女系</text>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+
+<view class="soon-box">
+    <view class="flex nav">
+        <view class="flex-auto nav-title">豆瓣电影Top250</view>
+        <view class="nav-arrow">》</view>
+    </view>
+    <scroll-view class="scroll-view_x" scroll-x>
+        <view class="inner">
+            <block wx:for="{{mainMovieUrls}}">
+                <view class="movies-box">
+                    <image src="{{item}}" class="scroll-image"/>
+                    <text class="movie-title">森林系》森女系森林系》森女系</text>
+                </view>
+            </block>
+        </view>
+    </scroll-view>
+</view>
+
+<view class="footer-fixed  flex">
+     <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover" class="flex-auto">
+        <image src="../../images/bd_on.png" class="footer-img"></image>
+        <text class="footer-title">榜单</text>
+     </navigator>
+     <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover" class="flex-auto">
+        <image src="../../images/seach.png" class="footer-img"></image>
+        <text class="footer-title">搜索</text>
+     </navigator>
+    <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover" class="flex-auto">
+        <image src="../../images/my.png" class="footer-img"></image>
+        <text class="footer-title">我的</text>
+    </navigator>
+</view>
+</view>
