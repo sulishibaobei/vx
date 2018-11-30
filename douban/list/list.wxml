@@ -1,0 +1,6 @@
+<!--douban/list/list.wxml 列表-->
+
+<import src="../movieslist/movieslist"/>
+<view class="content">
+   <template is="movie-list" data="{{ movies, loading, hasMore }}"/>
+</view>

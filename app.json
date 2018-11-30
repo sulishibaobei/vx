@@ -10,7 +10,9 @@
         "name": "DouBan",
         "pages": [
             "splash/splash",
-            "board/board"
+            "board/board",
+            "list/list",
+            "item/item"
         ],
         "independent": false
     }],

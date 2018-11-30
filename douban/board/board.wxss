@@ -5,30 +5,17 @@
     background: #f8f8f8;
 }
 
-.slide-image {
-    width: 100%;
+.swiper-box {
     height: 400rpx;
 }
 
-.flex {
-    display: -webkit-box;
-    display: -webkit-flex;
-    display: -ms-flexbox;
-    display: flex;
+.slide-image {
+    width: 100%;
+    height: 100%;
 }
 
-.flex .flex-one {
-    -webkit-box-flex: 0;
-    -webkit-flex: none;
-    -ms-flex: none;
-    flex: none;
-}
-
-.flex .flex-auto {
-    -webkit-box-flex: 1;
-    -webkit-flex: auto;
-    -ms-flex: auto;
-    flex: auto;
+.box-content {
+    margin-bottom: 1rem;
 }
 
 .soon-box {

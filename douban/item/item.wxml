@@ -1,0 +1,19 @@
+<!--douban/item/item.wxml 详情-->
+<view class="content" >
+  <view class="flex">
+      <view class="flex-one"> 
+          <image wx:if="{{ movie.images.large }}"  class="img" src="{{ movie.images.large }}" mode="aspectFill"></image>
+          <image wx:if="{{ !movie.images.large }}"  class="img" src="../../images/default.jpg" mode="aspectFill"></image>
+      </view>
+      <view class="flex-auto pl10"> 
+          <view class="name">{{movie.title}}（{{movie.year}}）</view>
+          <view class="score">评分：{{movie.rating.average}}</view>
+          <view class="director">导演：{{movie.directors[0].name}}</view>
+          <view class="main">主演: <text wx:for="{{movie.casts}}">{{item.name}}</text></view>
+      </view>
+  </view>
+  <view>
+      <view class="title">摘要：</view>
+      <view class="text">{{movie.summary}}</view>
+  </view>
+</view>

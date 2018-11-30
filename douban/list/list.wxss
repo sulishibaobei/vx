@@ -1,0 +1,6 @@
+/* douban/list/list.wxss */
+
+@import "../movieslist/movieslist.wxss";
+Page {
+    background: #f5f5f5;
+}

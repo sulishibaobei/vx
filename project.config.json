@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 2,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -50,7 +50,14 @@
 				{
 					"id": -1,
 					"name": "board",
-					"pathName": "douban/board/board"
+					"pathName": "douban/board/board",
+					"query": ""
+				},
+				{
+					"id": 3,
+					"name": "list",
+					"pathName": "douban/list/list",
+					"query": "type=in_theaters&title=正在上映的电影-北京"
 				}
 			]
 		}

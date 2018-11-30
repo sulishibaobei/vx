@@ -1,4 +1,5 @@
-// douban/board/board.js
+// douban/item/item.js
+// 获取全局应用程序实例对象
 const app = getApp()
 Page({
 
@@ -6,40 +7,34 @@ Page({
      * 页面的初始数据
      */
     data: {
-
-        boards: [
-            { key: 'in_theaters' },
-            { key: 'coming_soon' },
-            { key: 'new_movies' },
-            { key: 'top250' }
-        ]
+        title: '',
+        movie: {}
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
-        wx.showLoading({ title: '拼命加载中...' });
-        const tasks = this.data.boards.map(board => {
-            return app.douban.find(board.key, 1, 8)
-                .then(d => {
-                    board.title = d.title
-                    board.movies = d.subjects;
-                    return board
-                })
-        })
-        Promise.all(tasks).then(boards => {
-            console.log(boards);
-            this.setData({ boards: boards, loading: false })
-            wx.hideLoading()
-        })
+        wx.showLoading({ title: '拼命加载中...' })
+
+        app.douban.findOne(options.id)
+            .then(d => {
+                this.setData({ title: d.title, movie: d })
+                wx.setNavigationBarTitle({ title: d.title })
+                wx.hideLoading()
+            })
+            .catch(e => {
+                this.setData({ title: '获取数据异常', movie: {} })
+                console.error(e)
+                wx.hideLoading()
+            })
     },
 
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
     onReady: function() {
-
+        wx.setNavigationBarTitle({ title: this.data.title })
     },
 
     /**
@@ -81,6 +76,10 @@ Page({
      * 用户点击右上角分享
      */
     onShareAppMessage: function() {
-
+        return {
+            title: this.data.title,
+            desc: this.data.title,
+            path: '/pages/item?id=' + this.data.id
+        }
     }
 })
