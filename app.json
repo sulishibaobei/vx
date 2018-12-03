@@ -12,7 +12,8 @@
             "splash/splash",
             "board/board",
             "list/list",
-            "item/item"
+            "item/item",
+            "search/search"
         ],
         "independent": false
     }],

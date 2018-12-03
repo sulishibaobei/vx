@@ -28,17 +28,13 @@
 </view>
 </view>
 <view class="footer-fixed  flex">
-     <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover" class="flex-auto">
+     <view  class="flex-auto">
         <image src="../../images/bd_on.png" class="footer-img"></image>
         <text class="footer-title on">榜单</text>
-     </navigator>
-     <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover" class="flex-auto">
+     </view>
+     <navigator url="/douban/search/search" hover-class="navigator-hover" class="flex-auto">
         <image src="../../images/seach.png" class="footer-img"></image>
         <text class="footer-title">搜索</text>
      </navigator>
-    <navigator url="/page/navigate/navigate?title=navigate" hover-class="navigator-hover" class="flex-auto">
-        <image src="../../images/my.png" class="footer-img"></image>
-        <text class="footer-title">我的</text>
-    </navigator>
 </view>
 </view>
