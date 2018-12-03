@@ -4,24 +4,10 @@ Page({
         movies: [],
         name: 'Douban Movie',
         version: '0.1.0',
-        currentCity: '北京',
         loading: true
     },
     onLoad: function() {
         var that = this;
-        app.wechat.getLocation()
-            .then(res => {
-                const { latitude, longitude } = res
-                return app.baidu.getCityName(latitude, longitude)
-            })
-            .then(name => {
-                that.data.currentCity = name.replace('市', '')
-                console.log(`currentCity : ${this.data.currentCity}`)
-            })
-            .catch(err => {
-                that.data.currentCity = '北京'
-                console.error(err)
-            });
         this.getCache()
             .then(cache => {
                 if (cache) {

@@ -16,9 +16,24 @@ App({
     baidu: baidu,
     douban: douban,
     data: {
-        currentCity: "北京"
+        currentCity: "深圳"
     },
     onLaunch: function(options) {
+        wechat
+            .getLocation()
+            .then(res => {
+                const { latitude, longitude } = res
+                return baidu.getCityName(latitude, longitude)
+            })
+            .then(name => {
+                this.data.currentCity = name.replace('市', '')
+                console.log(`currentCity : ${this.data.currentCity}`)
+            })
+            .catch(err => {
+                this.data.currentCity = '北京'
+                console.error(err)
+            });
+
         // 展示本地存储能力
         // var logs = wx.getStorageSync('logs') || []
         // logs.unshift(Date.now())

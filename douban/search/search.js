@@ -20,6 +20,7 @@ Page({
         this.setData({ loading: true })
         return app.douban.find('search', this.data.page++, this.data.size, this.data.search)
             .then(d => {
+                console.log(d);
                 if (d.subjects.length) {
                     this.setData({ movies: this.data.movies.concat(d.subjects), loading: false })
                 } else {
