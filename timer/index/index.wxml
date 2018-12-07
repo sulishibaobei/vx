@@ -1,0 +1,20 @@
+<!--timer/index/index.wxml-->
+<view class="content">
+ <view class="banner">
+     <view class="tiemr"></view>
+ </view>
+ <view class="footer-fixed flex">
+     <navigator class="flex-auto">
+         <image src="../../images/timer_s.png" class="img"></image>
+         任务
+    </navigator>
+     <navigator class="flex-auto">
+        <image src="../../images/task_g.png" class="img"></image>
+        进度</navigator>
+     <navigator class="flex-auto">
+         <image src="../../images/icon_component.png" class="img"></image>
+         列表</navigator>
+ </view>
+
+</view>
+

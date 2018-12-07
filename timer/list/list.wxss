@@ -1,0 +1,40 @@
+/* timer/list/list.wxss */
+
+.nothing {
+    width: 100%;
+    text-align: center;
+    height: 100vh;
+    color: #9b9b9b;
+    font-size: 24rpx;
+}
+
+.nothing image {
+    width: 256rpx;
+    height: 256rpx;
+    display: block;
+    margin: 20% auto 20rpx;
+}
+
+.nothing .promty {
+    color: #e03236;
+    font-weight: bold;
+    font-size: 28rpx;
+    display: block;
+    padding: 10rpx;
+    border: 1px solid #e03236;
+    width: 150rpx;
+    margin: 10rpx auto;
+    border-radius: 40rpx;
+}
+
+.footer-fixed {
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.footer-fixed .img {
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+    margin: 10rpx auto 0rpx;
+}

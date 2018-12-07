@@ -1,0 +1,31 @@
+<!--timer/newTask/newTask.wxml-->
+<form bindsubmit="formSubmit" bindreset="formReset">
+    <view class="list flex">
+       <text class="flex-one">任务名称：</text>
+       <input placeholder="请输入任务名称" bindinput="bindKeyInput" class="flex-auto" maxlength="20"/>
+    </view>
+    <view class="list flex">
+       <text class="flex-one">任务开始时间：</text>
+        <picker mode="date" value="{{date}}" start="{{minDate}}" end="2019-09-01" bindchange="bindDateChange">
+            <view class="picker">
+               <text class="{{pickerStartHidden?'pickerHidden':''}}">请选择任务开始时间</text>{{date}}
+            </view>
+        </picker>
+    </view>
+    <view class="list flex">
+       <text class="flex-one">任务结束时间：</text>
+        <picker mode="date" value="{{endate}}" start="{{minEndDate}}" end="2019-09-01" bindchange="bindEndDateChange">
+            <view class="picker">
+               <text class="{{pickerEndHidden?'pickerHidden':''}}">请选择任务结束时间</text>{{endate}}
+            </view>
+        </picker>
+    </view>
+    <view class="list">
+       <text>备注：</text>
+       <textarea bindblur="bindTextAreaBlur" auto-height placeholder="请输入备注" class="w100"/>
+    </view>
+    <view class="btn-area">
+       <button form-type="submit">提交</button>
+       <button form-type="reset">重置</button>
+    </view>
+</form>

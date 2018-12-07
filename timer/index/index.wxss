@@ -1,0 +1,19 @@
+/* timer/index/index.wxss */
+
+.banner {
+    width: 100%;
+    height: 50vh;
+    background: #3188e8;
+}
+
+.footer-fixed {
+    text-align: center;
+    font-size: 28rpx;
+}
+
+.footer-fixed .img {
+    width: 48rpx;
+    height: 48rpx;
+    display: block;
+    margin: 10rpx auto 0rpx;
+}

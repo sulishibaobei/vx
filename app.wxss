@@ -29,3 +29,14 @@
     -ms-flex: auto;
     flex: auto;
 }
+
+.footer-fixed {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    background: #fff;
+    height: 100rpx;
+    width: 100%;
+    box-shadow: 0 -2px 3px 0 rgba(137, 137, 137, .4);
+    z-index: 1;
+}

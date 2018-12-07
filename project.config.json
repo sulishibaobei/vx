@@ -33,7 +33,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 7,
 			"list": [
 				{
 					"id": -1,
@@ -62,7 +62,26 @@
 				{
 					"id": -1,
 					"name": "search",
-					"pathName": "douban/search/search"
+					"pathName": "douban/search/search",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "timer",
+					"pathName": "timer/index/index",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "Tasklist",
+					"pathName": "timer/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "newTask",
+					"pathName": "timer/newTask/newTask",
+					"query": ""
 				}
 			]
 		}

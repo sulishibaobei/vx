@@ -1,0 +1,20 @@
+<!--timer/list/list.wxml-->
+<view class="content">
+  <view class="nothing">
+      <image src="../../images/zw.png"></image>
+      <text>暂无任务记录，快去新建任务吧</text>
+      <navigator class="promty" hover-class="none" url="../newTask/newTask">新建任务</navigator>
+  </view>
+ <view class="footer-fixed flex">
+     <navigator class="flex-auto">
+         <image src="../../images/timer_g.png" class="img"></image>
+         任务
+    </navigator>
+     <navigator class="flex-auto">
+        <image src="../../images/task_g.png" class="img"></image>
+        进度</navigator>
+     <navigator class="flex-auto">
+         <image src="../../images/icon_component_HL.png" class="img"></image>
+        列表</navigator>
+ </view>
+</view>

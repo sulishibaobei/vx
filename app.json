@@ -6,17 +6,28 @@
         "pages/map/map"
     ],
     "subPackages": [{
-        "root": "douban",
-        "name": "DouBan",
-        "pages": [
-            "splash/splash",
-            "board/board",
-            "list/list",
-            "item/item",
-            "search/search"
-        ],
-        "independent": false
-    }],
+            "root": "douban",
+            "name": "DouBan",
+            "pages": [
+                "splash/splash",
+                "board/board",
+                "list/list",
+                "item/item",
+                "search/search"
+            ],
+            "independent": false
+        },
+        {
+            "root": "timer",
+            "name": "Timer",
+            "pages": [
+                "index/index",
+                "list/list",
+                "newTask/newTask"
+            ],
+            "independent": false
+        }
+    ],
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#3188e8",
