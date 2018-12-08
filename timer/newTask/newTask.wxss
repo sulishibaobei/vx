@@ -17,6 +17,10 @@
     transform: scaleY(0.5)
 }
 
+.list:last-child::after {
+    background: transparent;
+}
+
 .list text {
     line-height: 56rpx;
     color: #666;

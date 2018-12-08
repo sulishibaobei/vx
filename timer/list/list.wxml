@@ -1,10 +1,25 @@
 <!--timer/list/list.wxml-->
 <view class="content">
-  <view class="nothing">
+   <view class="nothing" wx:if="{{task.length==0}}">
       <image src="../../images/zw.png"></image>
       <text>暂无任务记录，快去新建任务吧</text>
       <navigator class="promty" hover-class="none" url="../newTask/newTask">新建任务</navigator>
-  </view>
+   </view>
+   <view class="list" wx:for="{{task}}" wx:for-index="id">
+        <navigator url="../newTask/newTask?id={{id}}" class="flex"> 
+            <view class="flex-auto">
+                <text class="name">{{item.name}}</text>
+                <text class="grey">{{item.desc}}</text>
+            </view>
+            <view class="flex-one">
+                <text>{{item.establishDate}}</text>
+            </view>
+        </navigator>
+    </view>
+    <view class="flowBox" hover-class="none" bindtap="gotoNewTask" animation="{{animation}}">
+        <image src="../../images/newTask.png"></image>
+        <text>新建任务</text>
+    </view>
  <view class="footer-fixed flex">
      <navigator class="flex-auto">
          <image src="../../images/timer_g.png" class="img"></image>
