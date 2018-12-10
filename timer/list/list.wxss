@@ -44,6 +44,10 @@
     transform: scaleY(0.5)
 }
 
+.list:last-child::after {
+    background: transparent;
+}
+
 .name {
     font-size: 28rpx;
     font-weight: bold;

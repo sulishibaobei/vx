@@ -4,6 +4,7 @@
     padding: 20rpx 50rpx;
     font-size: 28rpx;
     position: relative;
+    line-height: 56rpx;
 }
 
 .list::after {
@@ -33,12 +34,22 @@
 
 .btn-area {
     padding: 10rpx;
-    display: flex;
-    margin-top: 300rpx;
+    position: fixed;
+    background: #fff;
+    z-index: 10;
+    bottom: 0rpx;
+    left: 50rpx;
+    padding-bottom: 20rpx
 }
 
 .btn-area button {
     width: 300rpx;
+    float: left;
+    margin-right: 30rpx;
+}
+
+textarea {
+    height: 300rpx;
 }
 
 
@@ -46,10 +57,68 @@
 * 日期插件
 */
 
-.picker {
-    line-height: 56rpx;
-}
-
 .pickerHidden {
     display: none;
+}
+
+.pick_datetime {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 2;
+    background: #fff;
+}
+
+.pick_datetime_tool {
+    display: flex;
+    justify-content: space-between;
+    height: 92rpx;
+    line-height: 92rpx;
+    position: relative;
+    padding: 0 20rpx;
+}
+
+.pick_datetime_tool::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 1px;
+    background: #e6e6e6;
+    transform: scaleY(0.5);
+}
+
+.pick_datetime_tool::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 1px;
+    background: #e6e6e6;
+    transform: scaleY(0.5);
+}
+
+.pick_datetime_ok {
+    font-weight: bold;
+    color: #06BD04;
+    font-size: 26rpx;
+}
+
+.pick_datetime_clear {
+    color: #666;
+    font-size: 26rpx;
+}
+
+.pick_datetime picker-view {
+    font-size: 30rpx;
+}
+
+.pick_datetime_column {
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
 }

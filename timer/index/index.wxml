@@ -1,7 +1,12 @@
 <!--timer/index/index.wxml-->
 <view class="content">
  <view class="banner">
-     <view class="tiemr"></view>
+     <view class="timer">120:00 <text class="unit">分钟</text></view>
+     <text class="status">状态：进行中</text>
+ </view>
+ <view class="flex">
+   <button class="flex-auto" class="btn">开始</button>
+    <button class="flex-auto" class="btn">保存到手机</button>
  </view>
  <view class="footer-fixed flex">
      <navigator class="flex-auto">

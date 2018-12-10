@@ -1,34 +1,29 @@
 <!--timer/newTask/newTask.wxml-->
+<include src="../../tools/wxml/picker_datetime.wxml"  />
 <form bindsubmit="formSubmit" bindreset="formReset" >
+  <view>
     <view class="list flex">
        <text class="flex-one">任务名称：</text>
        <input name="name" placeholder="请输入任务名称" bindinput="bindKeyInput" class="flex-auto" maxlength="20" value="{{task.name}}"/>
     </view>
     <view class="list flex">
        <text class="flex-one">任务开始时间：</text>
-        <picker mode="time" start="06:01" end="22:01"  value="{{date}}" bindchange="bindStartDateChange" name="startTime" disabled="{{task.startTime}}"  >
-            <view class="picker">
-               <text class="{{pickerStartHidden|| task.startTime?'pickerHidden':''}}">请选择任务开始时间</text>{{date || task.startTime}}
-            </view>
-        </picker>
+        <input bindtap="startTap" class="flex-auto" name="startTime"  value="{{task.startTime || startDate}}" disabled="{{task.startTime}}" />
     </view>
     <view class="list flex">
        <text class="flex-one">任务结束时间：</text>
-        <picker mode="time" start="{{minEndDate}}"  end="22:01"  value="{{endate}}"  bindchange="bindEndDateChange" name="endTime" disabled="{{task.endTime}}">
-            <view class="picker">
-               <text class="{{pickerEndHidden || task.endTime?'pickerHidden':''}}">请选择任务结束时间</text>{{endate || task.endTime}}
-            </view>
-        </picker>
+        <input bindtap="endTap" class="flex-auto" start="{{startDate}}" name="endTime" value="{{task.endTime||endDate}}" disabled="{{task.endTime}}"/>
     </view>
     <view class="list">
        <text>备注：</text>
-       <textarea bindinput="bindTextAreaBlur" auto-height placeholder="请输入备注" class="w100" name="desc" value="{{task.desc}}"/>
+       <textarea bindinput="bindTextAreaBlur" placeholder="请输入备注" class="w100" name="desc" value="{{task.desc}}" disabled="{{task.desc}}"/>
     </view>
-    <view class="list {{detailList?'pickerHidden':''}}">
+  </view>
+    <view class="list {{detailList?'pickerHidden':''}}" style="background:rgba(244,244,1,.1)">
       <view>清单列表:</view>
       <view>任务名称：{{inputValue}}</view>
-      <view>任务开始时间：{{tarDate}} {{date}}</view>
-      <view>任务结束时间：{{tarDate}} {{endate}}</view>
+      <view>任务开始时间：{{startDate}}</view>
+      <view>任务结束时间：{{endDate}}</view>
       <view>任务创建时间: {{tarToDay}}</view>
       <view>备注：{{txtValue}}</view>
     </view>
@@ -37,3 +32,5 @@
        <button form-type="reset">重置</button>
     </view>
 </form>
+
+
