@@ -32,6 +32,13 @@
     padding-top: 30rpx;
 }
 
+.desc {
+    font-size: 24rpx;
+    margin: 30rpx 40rpx 10rpx;
+    display: block;
+    color: #fff;
+}
+
 .btn {
     width: 300rpx;
     margin-top: 30rpx;

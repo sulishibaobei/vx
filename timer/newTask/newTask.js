@@ -29,7 +29,6 @@ Page({
         var that = this;
         var arr = [];
         var val = e.detail.value;
-        console.log(val);
         if (!val.name) {
             wx.showToast({
                 title: '请输入任务名称',
@@ -55,7 +54,6 @@ Page({
             return;
         }
         if (util.compareDate(val.startTime, val.endTime)) {
-            console.log(util.compareDate(val.startTime, val.endTime));
             wx.showToast({
                 title: '任务开始时间要小于任务结束时间',
                 icon: 'none',
