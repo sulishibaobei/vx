@@ -2,14 +2,14 @@
 var util = require('../../utils/util.js');
 const app = getApp()
 Page({
-
     /**
      * 页面的初始数据
      */
     data: {
         title: "",
         taskInfo: {},
-        differenceTime: ''
+        differenceTime: '',
+        taskArr: []
     },
 
     /**
@@ -21,44 +21,58 @@ Page({
     },
     getInfo: function() {
         var that = this;
+        setTimeout(function() {
+            wx.hideLoading()
+        }, 2000)
         wx.getStorage({
             key: 'task',
-            success(res) {
+            success: function(res) {
+                wx.hideLoading();
                 that.setData({
                     title: res.data[res.data.length - 1].name,
-                    taskInfo: res.data,
-                    differenceTime: util.timeDifference(res.data[res.data.length - 1].startTime, res.data[res.data.length - 1].endTime)
+                    taskInfo: res.data[res.data.length - 1],
+                    taskArr: res.data,
+                    differenceTime: util.timeDifference(res.data[res.data.length - 1].startTime, res.data[res.data.length - 1].endTime),
+                    timer: setInterval(function() { //这里把setInterval赋值给变量名为timer的变量
+                        that.data.differenceTime--;
+                        that.setData({
+                            differenceTime: that.data.differenceTime
+                        })
+                        if (that.data.differenceTime == 0) {
+                            clearInterval(that.data.timer);
+
+                        }
+                    }, 60000)
                 })
                 wx.setNavigationBarTitle({
                     title: that.data.title
                 });
             },
-            fail(error) {}
+            fail: function(error) {}
         })
+
     },
     startTask: function() {
         var that = this;
-        var taskInfo = this.data.taskInfo;
-        taskInfo[taskInfo.length - 1].status = true;
+        var taskArr = this.data.taskArr;
+        if (taskArr[taskArr.length - 1].status) {
+            taskArr[taskArr.length - 1].status = false;
+        } else {
+            taskArr[taskArr.length - 1].status = true;
+        }
         wx.setStorage({
             key: 'task',
-            data: taskInfo,
-            success(res) {
-                console.log(res.data);
+            data: taskArr,
+            complete: function(res) {
                 that.getInfo();
                 wx.showToast({
-                    title: '任务启动成功',
+                    title: '操作成功',
                     icon: 'none',
                     duration: 2000
                 })
-            },
-            fail(err) {
-                console.log(err);
-            },
-            complete(res) {
-                console.log(res);
             }
         })
+
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

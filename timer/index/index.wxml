@@ -1,12 +1,12 @@
 <!--timer/index/index.wxml-->
 <view class="content">
- <view class="banner" wx:if="{{taskInfo[taskInfo.length-1]}}" >
+ <view class="banner" wx:if="{{taskInfo}}">
      <view class="timer">{{differenceTime}} <text class="unit">分钟</text></view>
-     <text class="status">状态：{{item.status?'进行中':'未开始'}}</text>
-     <text class="desc">{{item.desc}}</text>
+     <text class="status">状态：{{taskInfo.status?'进行中':'暂停中'}}</text>
+     <text class="desc">内容：{{taskInfo.desc}}</text>
  </view>
  <view class="flex">
-   <button class="flex-auto" class="btn" bindtap="startTask">{{item.status?'暂停':'开始'}}</button>
+   <button class="flex-auto" class="btn" bindtap="startTask">{{taskInfo.status?'暂停':'开始'}}</button>
     <button class="flex-auto" class="btn">保存到手机</button>
  </view>
  <view class="footer-fixed flex">
@@ -21,6 +21,5 @@
          <image src="../../images/icon_component.png" class="img"></image>
          列表</navigator>
  </view>
-
 </view>
 

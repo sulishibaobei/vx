@@ -11,7 +11,7 @@
     width: 300rpx;
     height: 300rpx;
     border-radius: 50%;
-    border: 2px solid #fff;
+    border: 5px solid #fff;
     margin: 0rpx auto;
     text-align: center;
     color: #fff;
@@ -37,6 +37,7 @@
     margin: 30rpx 40rpx 10rpx;
     display: block;
     color: #fff;
+    text-align: center;
 }
 
 .btn {
