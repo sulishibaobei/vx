@@ -18,6 +18,7 @@ Page({
         var that = this;
         that.getInfo();
         that.sys();
+
     },
     getInfo: function() {
         var that = this;
@@ -55,67 +56,55 @@ Page({
         var that = this;
         wx.getSystemInfo({
             success: function(res) {
+                console.log(res.windowWidth);
+                console.log(res.windowHeight);
                 that.setData({
                     windowW: res.windowWidth,
-                    windowH: res.windowHeight
+                    windowH: res.windowHeight / 2
                 })
             },
         })
     },
-    canvasdraw: function(canvas) {
-        var that = this;
-        var windowW = that.data.windowW;
-        var windowH = that.data.windowH;
-        var canvasimgbg = that.data.canvasimgbg;
-        var canvasimg1 = that.data.chooseimg;
-        canvas.drawImage(canvasimgbg, 0, 0, windowW, windowH);
-        canvas.drawImage(canvasimg1, 0, 10, 200, 200);
-        canvas.setFontSize(50)
-        canvas.fillText('Hello', 200, 200)
+    saveImage: function() {
+        //  const ctx = wx.createCanvasContext('canvas')
+        //  ctx.setFillStyle('red')
+        // ctx.fillRect(0, 0, this.data.windowW, 360);
+        // ctx.draw(true, setTimeout(function() {
+        //     wx.canvasToTempFilePath({
+        //         x: 0,
+        //         y: 0,
+        //         width: 150,
+        //         height: 100,
+        //         destWidth: 150,
+        //         destHeight: 100,
+        //         canvasId: 'canvas',
+        //         success: function(res) {
+        //             wx.saveImageToPhotosAlbum({
+        //                 filePath: res.tempFilePath,
+        //             })
+        //         }
+        //     })
+        // }, 100))
 
-        canvas.draw(true, setTimeout(function() {
-            that.daochu()
-        }, 1000));
-        // canvas.draw();
-    },
-    daochu: function() {
-        console.log('a');
-        var that = this;
-        var windowW = that.data.windowW;
-        var windowH = that.data.windowH;
-        wx.canvasToTempFilePath({
-            x: 0,
-            y: 0,
-            width: windowW,
-            height: windowH,
-            destWidth: windowW,
-            destHeight: windowH,
-            canvasId: 'canvas',
-            success: function(res) {
-                console.log(res)
-                wx.saveImageToPhotosAlbum({
-                    filePath: res.tempFilePath,
-                    success(res) {}
-                })
-                wx.previewImage({
-                    urls: [res.tempFilePath],
-                })
-            }
-        })
-    },
-    chooseImage: function() {
-        var that = this;
-        var canvas = wx.createCanvasContext('canvas');
-        wx.chooseImage({
-            success: function(res) {
-                that.setData({
-                    chooseimg: res.tempFilePaths[0]
-                })
-                that.canvasdraw(canvas);
-            },
-        })
-    },
+        // wx.canvasGetImageData({
+        //     canvasId: 'canvas',
+        //     x: 0,
+        //     y: 0,
+        //     width: 100,
+        //     height: 100,
+        //     success(res) {
+        //         console.log(res.width) // 100
+        //         console.log(res.height) // 100
+        //         console.log(res.data instanceof Uint8ClampedArray) // true
+        //         console.log(res.data.length) // 100 * 100 * 4
+        //     }
+        // })
 
+        wx.onUserCaptureScreen(function(res) {
+            console.log('用户截屏了')
+        })
+
+    },
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
@@ -144,14 +133,9 @@ Page({
     /**
      * 页面上拉触底事件的处理函数
      */
-    onReachBottom: function() {
-
-    },
-
+    onReachBottom: function() {},
     /**
      * 用户点击右上角分享
      */
-    onShareAppMessage: function() {
-
-    }
+    onShareAppMessage: function() {}
 })

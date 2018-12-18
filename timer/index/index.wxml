@@ -7,7 +7,7 @@
  </view>
  <view class="flex">
    <button class="flex-auto" class="btn" bindtap="startTask">{{taskInfo.status?'暂停':'开始'}}</button>
-    <button class="flex-auto" class="btn" bindtap='chooseImage'>保存到手机</button>
+    <button class="flex-auto" class="btn" bindtap='saveImage'>保存到手机</button>
  </view>
  <view class="footer-fixed flex">
      <navigator class="flex-auto">
@@ -21,7 +21,6 @@
          <image src="../../images/icon_component.png" class="img"></image>
          列表</navigator>
  </view>
-
-<canvas canvas-id='canvas' style='width:{{windowW}}px;height:{{windowH}}px'></canvas>
+<canvas canvas-id='canvas' style='width:{{windowW}}px;height:{{windowH}}px;' class="cvs"></canvas>
 </view>
 
