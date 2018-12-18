@@ -58,9 +58,62 @@ function timeDifference(time1, time2) {
     var minutes = m + n;
     return minutes;
 }
+
+function savePicToAlbum(tempFilePath) {
+    let that = this;
+    wx.getSetting({
+        success(res) {
+            if (!res.authSetting['scope.writePhotosAlbum']) {
+                wx.authorize({
+                    scope: 'scope.writePhotosAlbum',
+                    success() {
+                        wx.saveImageToPhotosAlbum({
+                            filePath: tempFilePath,
+                            success(res) {
+                                wx.showToast({
+                                    title: '保存成功'
+                                });
+                            },
+                            fail(res) {
+                                console.log(res);
+                            }
+                        })
+                    },
+                    fail() {
+                        // 用户拒绝授权,打开设置页面
+                        wx.openSetting({
+                            success: function(data) {
+                                console.log("openSetting: success");
+                            },
+                            fail: function(data) {
+                                console.log("openSetting: fail");
+                            }
+                        });
+                    }
+                })
+            } else {
+                wx.saveImageToPhotosAlbum({
+                    filePath: tempFilePath,
+                    success(res) {
+                        wx.showToast({
+                            title: '保存成功',
+                        });
+                    },
+                    fail(res) {
+                        console.log(res);
+                    }
+                })
+            }
+        },
+        fail(res) {
+            console.log(res);
+        }
+    })
+}
 module.exports = {
     formatTime: formatTime,
     formatDate: formatDate,
     compareDate: compareDate,
-    timeDifference: timeDifference
+    timeDifference: timeDifference,
+    savePicToAlbum: savePicToAlbum
 }

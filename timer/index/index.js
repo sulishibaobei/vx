@@ -9,15 +9,15 @@ Page({
         title: "",
         taskInfo: {},
         differenceTime: '',
-        taskArr: []
+        taskArr: [],
     },
-
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function(options) {
         var that = this;
         that.getInfo();
+        that.sys();
     },
     getInfo: function() {
         var that = this;
@@ -50,30 +50,72 @@ Page({
             },
             fail: function(error) {}
         })
-
     },
-    startTask: function() {
+    sys: function() {
         var that = this;
-        var taskArr = this.data.taskArr;
-        if (taskArr[taskArr.length - 1].status) {
-            taskArr[taskArr.length - 1].status = false;
-        } else {
-            taskArr[taskArr.length - 1].status = true;
-        }
-        wx.setStorage({
-            key: 'task',
-            data: taskArr,
-            complete: function(res) {
-                that.getInfo();
-                wx.showToast({
-                    title: '操作成功',
-                    icon: 'none',
-                    duration: 2000
+        wx.getSystemInfo({
+            success: function(res) {
+                that.setData({
+                    windowW: res.windowWidth,
+                    windowH: res.windowHeight
+                })
+            },
+        })
+    },
+    canvasdraw: function(canvas) {
+        var that = this;
+        var windowW = that.data.windowW;
+        var windowH = that.data.windowH;
+        var canvasimgbg = that.data.canvasimgbg;
+        var canvasimg1 = that.data.chooseimg;
+        canvas.drawImage(canvasimgbg, 0, 0, windowW, windowH);
+        canvas.drawImage(canvasimg1, 0, 10, 200, 200);
+        canvas.setFontSize(50)
+        canvas.fillText('Hello', 200, 200)
+
+        canvas.draw(true, setTimeout(function() {
+            that.daochu()
+        }, 1000));
+        // canvas.draw();
+    },
+    daochu: function() {
+        console.log('a');
+        var that = this;
+        var windowW = that.data.windowW;
+        var windowH = that.data.windowH;
+        wx.canvasToTempFilePath({
+            x: 0,
+            y: 0,
+            width: windowW,
+            height: windowH,
+            destWidth: windowW,
+            destHeight: windowH,
+            canvasId: 'canvas',
+            success: function(res) {
+                console.log(res)
+                wx.saveImageToPhotosAlbum({
+                    filePath: res.tempFilePath,
+                    success(res) {}
+                })
+                wx.previewImage({
+                    urls: [res.tempFilePath],
                 })
             }
         })
-
     },
+    chooseImage: function() {
+        var that = this;
+        var canvas = wx.createCanvasContext('canvas');
+        wx.chooseImage({
+            success: function(res) {
+                that.setData({
+                    chooseimg: res.tempFilePaths[0]
+                })
+                that.canvasdraw(canvas);
+            },
+        })
+    },
+
     /**
      * 生命周期函数--监听页面初次渲染完成
      */
