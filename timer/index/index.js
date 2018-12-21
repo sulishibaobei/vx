@@ -85,7 +85,6 @@ Page({
         //         }
         //     })
         // }, 100))
-
         // wx.canvasGetImageData({
         //     canvasId: 'canvas',
         //     x: 0,
@@ -104,6 +103,21 @@ Page({
             console.log('用户截屏了')
         })
 
+    },
+    gotoNewTask: function() {
+        var animation = wx.createAnimation({
+            transformOrigin: "100% 50%",
+            duration: 1000,
+            timingFunction: "ease",
+            delay: 0
+        });
+        animation.opacity(0.8).step({ duration: 1000 });
+        this.setData({
+            animation: animation.export()
+        });
+        wx.navigateTo({
+            url: '../newTask/newTask'
+        })
     },
     /**
      * 生命周期函数--监听页面初次渲染完成

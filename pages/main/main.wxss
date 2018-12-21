@@ -1,34 +1,41 @@
 /**index.wxss**/
+
 .userinfo {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding-top: 50rpx;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 50rpx;
 }
 
 .userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+    width: 128rpx;
+    height: 128rpx;
+    margin: 20rpx;
+    border-radius: 50%;
 }
 
 .userinfo-nickname {
-  color: #aaa;
+    color: #aaa;
 }
-.programList{
-  margin: 20rpx;
-  text-align: left;
-  border-top:1px solid #ddd;
-  width: 630rpx;
+
+.programList {
+    margin: 20rpx;
+    text-align: left;
+    border-top: 1px solid #ddd;
+    width: 630rpx;
 }
-.programList .title{
-  font-size: 24rpx;
-  color:#3188e8;
+
+.programList .title {
+    font-size: 24rpx;
+    color: #3188e8;
 }
-.programBtn{
-  width:200rpx;
-  float: left;
-  margin-top: 20rpx;
+
+.programBtn {
+    width: 200rpx;
+    float: left;
+    margin-top: 20rpx;
 }
- 
+
+.programBtn {
+    margin-right: 10rpx
+}

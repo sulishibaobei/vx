@@ -21,14 +21,11 @@
         <text>新建任务</text>
     </view>
  <view class="footer-fixed flex">
-     <navigator class="flex-auto">
+     <navigator class="flex-auto" url="../index/index">
          <image src="../../images/timer_g.png" class="img"></image>
          任务
     </navigator>
-     <navigator class="flex-auto">
-        <image src="../../images/task_g.png" class="img"></image>
-        进度</navigator>
-     <navigator class="flex-auto">
+     <navigator class="flex-auto"  urel="../list/list">
          <image src="../../images/icon_component_HL.png" class="img"></image>
         列表</navigator>
  </view>

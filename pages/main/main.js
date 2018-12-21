@@ -54,5 +54,10 @@ Page({
         wx.navigateTo({
             url: "/douban/splash/splash"
         })
+    },
+    fanqie: function() {
+        wx.navigateTo({
+            url: "/timer/index/index"
+        })
     }
 })

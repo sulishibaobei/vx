@@ -11,6 +11,7 @@
      <text class="title">项目列表：</text>
      <view>
        <button class="programBtn" bindtap="douban">豆瓣小馆</button>
+        <button class="programBtn" bindtap="fanqie">番茄时钟</button>
      </view>
     
   </view>

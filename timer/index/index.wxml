@@ -1,6 +1,7 @@
 <!--timer/index/index.wxml-->
 <view class="content">
- <view class="banner" wx:if="{{taskInfo}}">
+ <view  wx:if="{{taskInfo.length>0}}">
+ <view class="banner" >
      <view class="timer">{{differenceTime}} <text class="unit">分钟</text></view>
      <text class="status">状态：{{taskInfo.status?'进行中':'暂停中'}}</text>
      <text class="desc">内容：{{taskInfo.desc}}</text>
@@ -9,15 +10,20 @@
    <button class="flex-auto" class="btn" bindtap="startTask">{{taskInfo.status?'暂停':'开始'}}</button>
     <button class="flex-auto" class="btn" bindtap='saveImage'>保存到手机</button>
  </view>
+</view>
+<view else>
+  <view  class="nothing">暂无数据</view>
+  <view class="flowBox" hover-class="none" bindtap="gotoNewTask" animation="{{animation}}">
+        <image src="../../images/newTask.png"></image>
+        <text>新建任务</text>
+    </view>
+</view>
  <view class="footer-fixed flex">
-     <navigator class="flex-auto">
+     <navigator class="flex-auto"  url="../index/index">
          <image src="../../images/timer_s.png" class="img"></image>
          任务
     </navigator>
-     <navigator class="flex-auto">
-        <image src="../../images/task_g.png" class="img"></image>
-        进度</navigator>
-     <navigator class="flex-auto">
+     <navigator class="flex-auto"  url="../list/list">
          <image src="../../images/icon_component.png" class="img"></image>
          列表</navigator>
  </view>
