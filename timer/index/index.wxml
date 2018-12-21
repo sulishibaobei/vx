@@ -1,6 +1,6 @@
 <!--timer/index/index.wxml-->
 <view class="content">
- <view  wx:if="{{taskInfo.length>0}}">
+ <view  wx:if="{{taskInfo}}">
  <view class="banner" >
      <view class="timer">{{differenceTime}} <text class="unit">分钟</text></view>
      <text class="status">状态：{{taskInfo.status?'进行中':'暂停中'}}</text>
@@ -11,7 +11,7 @@
     <button class="flex-auto" class="btn" bindtap='saveImage'>保存到手机</button>
  </view>
 </view>
-<view else>
+<view wx:if="{{! taskInfo}}">
   <view  class="nothing">暂无数据</view>
   <view class="flowBox" hover-class="none" bindtap="gotoNewTask" animation="{{animation}}">
         <image src="../../images/newTask.png"></image>
